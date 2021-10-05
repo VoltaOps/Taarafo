@@ -1,0 +1,20 @@
+version: '1.29.2' # Docker-Compose Version
+
+#Services and Containers
+services:
+  angular: "Front End"
+    build: # docker file directory
+    ports:
+      - "4200:4200" #Port Maping
+  
+  express: "Express Js as a Backend"
+    build: # docker file directory
+    ports:
+      - "3000:3000" # Ports Maping for Express 
+    links:
+      - database # link express service to the database service
+  
+  database: "MongoDB as a Database"
+    image: mongo # image build for the container
+    ports:
+      - "27017:27017" # Port Forwarding for the database
