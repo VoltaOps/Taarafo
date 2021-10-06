@@ -8,7 +8,7 @@ services:
       - "4200:4200" #Port Maping
   
   express: "Express Js as a Backend"
-    build: # docker file directory
+    build: ./backend/Dockfile
     ports:
       - "3000:3000" # Ports Maping for Express 
     links:
